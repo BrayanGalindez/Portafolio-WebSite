@@ -22,9 +22,9 @@ function About() {
             Hoja de vida
           </button>
         </div>
-        <div className="bg-white rounded-lg shadow-lg w-64 h-64 ">
-          <div className="h-64 flex items-center justify-center">
-            <img src={foto} alt="Mi foto" className="rounded-t-lg" />
+        <div className="bg-white rounded-lg shadow-lg w-64 h-64 mt-20">
+          <div className="h-64 flex items-center justify-center mt-10">
+            <img src={foto} alt="Mi foto" className="rounded-t-lg mt-10" />
           </div>
 
           <div className="p-4">
