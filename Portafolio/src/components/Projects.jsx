@@ -23,7 +23,14 @@ function Projects() {
       githubLink: "https://github.com/BrayanGalindez/TuChazaDefinitive",
       webLink: "https://www.example.com/project1",
       status: "Finalizado", // Agrega el estado del proyecto
-      technologies: ["react", "node.js", "bootstrap", "mongodb", "html", "js"],
+      technologies: [
+        "react",
+        "node.js", 
+        "bootstrap", 
+        "mongodb", 
+        "html", 
+        "js"
+      ],
     },
     {
       title: "BogoTaste",
@@ -59,6 +66,7 @@ function Projects() {
         "html",
         "js",
         "fastapi",
+        "tailwind"
       ],
     },
     // Agrega más objetos de proyecto aquí
