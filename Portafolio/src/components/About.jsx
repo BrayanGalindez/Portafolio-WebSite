@@ -1,5 +1,5 @@
 // import React from 'react';
-import foto from "../assets//About/goku.png";
+import foto from "../assets//About/perfil.png";
 function About() {
   return (
     <section id="about" className="bg-gray-200 py-8">
@@ -23,8 +23,8 @@ function About() {
           </button>
         </div>
         <div className="bg-white rounded-lg shadow-lg w-64 h-64 mt-20">
-          <div className="h-64 flex items-center justify-center mt-10">
-            <img src={foto} alt="Mi foto" className="rounded-t-lg mt-10" />
+          <div className="h-64 flex items-center justify-center">
+            <img src={foto} alt="Mi foto" className="rounded-t-lg " />
           </div>
 
           <div className="p-4">
