@@ -5,7 +5,7 @@ function Contact() {
     <section id="contact" className="py-8">
       <div className="max-w-5xl mx-auto">
         <div className="max-w-md mx-auto py-8">
-          <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 mb-4 text-center">
             Contactame
           </h2>
           <form>
