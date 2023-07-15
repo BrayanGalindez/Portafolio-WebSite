@@ -16,7 +16,7 @@ function Home() {
           {/* <Projects /> */}
         </div>
         <div >
-          <Education />
+          {/* <Education /> */}
         </div>
         <div >
           {/* <Contact /> */}
