@@ -78,7 +78,8 @@ function Navbar(props) {
   };
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow-md flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow flex items-center justify-between">
+      {/* <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow-md flex items-center justify-between"> */}
         <div className="flex justify-between items-center">
           <span className="text-2xl font-[Poppins] cursor-pointer">
             <img
