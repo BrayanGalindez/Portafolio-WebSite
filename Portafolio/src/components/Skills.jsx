@@ -15,23 +15,17 @@ import java from "../assets/Skills/java.png";
 
 import { useState, useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
-// import dataSkills from "../components/data/DataSkills.jsx";
-// import dataSkills from "./data/DataSkills.jsx";
-const dataSkills = {
-  es: {
-    title: "Habilidades",
-  },
-  en: {
-    title: "Skills",
-  },
-};
+import dataSkills_es from "./data/DataSkills/DataSkills_es.json";
+import dataSkills_en from "./data/DataSkills/DataSkills_en.json";
+
+
 
 function Skills() {
-
   const [hoveredTechnology, setHoveredTechnology] = useState("");
-
   const { language } = useContext(LanguageContext);
-  const { title } = dataSkills[language];
+  const dataSkills = language === "es" ? dataSkills_es.es : dataSkills_en.en;
+  const { title } = dataSkills;
+
   const handleMouseEnter = (technologyName) => {
     setHoveredTechnology(technologyName);
   };
@@ -43,8 +37,8 @@ function Skills() {
   return (
     <section id="skills" className="bg-white py-8 dark:bg-gray-900 mt-10 ">
       <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 dark:text-white mb-4">
-        {/* {title} */}
-        title
+        {/* {language === "en" ? "Skills" : "Habilidades"} */}
+        {title}
       </h2>
       <div className="max-w-5xl mx-auto flex flex-wrap justify-center">
         <div
