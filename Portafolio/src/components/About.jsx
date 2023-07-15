@@ -9,7 +9,7 @@ function About() {
   const dataSkills = language === "es" ? dataAbout_es.es : dataAbout_en.en;
   const { greeting, description, button  } = dataSkills;
   return (
-    <section id="about" className="bg-white py-8 dark:bg-gray-900 mt-10">
+    <section className="bg-white py-8 dark:bg-gray-900 mt-16">
       <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="max-w-5xl mx-auto py-8">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
