@@ -1,4 +1,4 @@
-import About from "../components/About";
+// import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Education from "../components/Education";
@@ -7,7 +7,7 @@ function Home() {
   return (
       <div className="bg-gray-200 flex-grow">
         <div >
-          <About />
+          {/* <About /> */}
         </div>
         <div >
           <Skills />
