@@ -35,7 +35,7 @@ function Skills() {
   };
 
   return (
-    <section id="skills" className="bg-white py-8 dark:bg-gray-900 mt-10 ">
+    <section id="skills" className="bg-white py-8 dark:bg-gray-900 ">
       <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 dark:text-white mb-4">
         {/* {language === "en" ? "Skills" : "Habilidades"} */}
         {title}
