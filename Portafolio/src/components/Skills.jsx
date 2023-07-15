@@ -33,7 +33,7 @@ function Skills() {
   return (
     <section id="skills" className="bg-white py-8 dark:bg-gray-900 ">
       <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 dark:text-white mb-4">
-        {title}
+        Habilidades
       </h2>
       <div className="max-w-5xl mx-auto flex flex-wrap justify-center">
         <div
