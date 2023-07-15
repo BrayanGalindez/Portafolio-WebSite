@@ -3,10 +3,10 @@ const dataSkills = {
       title: "Habilidades",
 
     },
-    en: {
-        title: "Skills",
+    // en: {
+    //     title: "Skills",
 
-    },
+    // },
   };
   
   export default dataSkills;
