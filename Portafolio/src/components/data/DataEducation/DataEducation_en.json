@@ -1,0 +1,22 @@
+{
+    "en": [
+      {
+        "title": "MisionTic",
+        "description": "MisionTIC is a training program offered by the Ministry of Information and Communication Technologies (MinTIC) that focuses on providing education in fundamental areas of programming. During this program, participants acquire knowledge and skills in topics such as Fundamentals of Programming, Basic Programming, Software Development, and Web Application Development.\n\nThe MisionTIC program has a total duration of 800 hours, during which participants have the opportunity to dive into the world of programming and develop practical projects that allow them to apply the concepts learned.",
+        "certificateLink": "Mintic.pdf",
+        "imageFont": "misiontic.png"
+      },
+      {
+        "title": "Fundamentals of Data Analytics",
+        "description": "During the Fundamentals of Data Analytics course by Correlation One, I acquired knowledge in data literacy, Excel, Python, statistics, and data cleaning. Additionally, I explored advanced topics such as data visualization, pivot tables in Excel, conditional logic, and designing dashboards. The course also covered logistic regression, databases, SQL, and organizing professional data teams in companies. In summary, the course provided a solid foundation in data analytics, ranging from basic concepts to advanced tools and techniques.",
+        "certificateLink": "DS4A.pdf",
+        "imageFont": "DS4A.png"
+      },
+      {
+        "title": "Python Coding and Programming Course",
+        "description": "In the Python Coding and Programming course by Innovation Campus, the focus was on the fundamentals of Python with an emphasis on data analysis.",
+        "certificateLink": "InnovationCampus.pdf",
+        "imageFont": "InnovationCampus.png"
+      }
+    ]
+  }
