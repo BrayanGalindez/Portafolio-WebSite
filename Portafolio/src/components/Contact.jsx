@@ -1,20 +1,12 @@
 import { useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
-import dataContact from "../components/data/DataContact.jsx";
-
+import dataContact_es from "./data/dataContact/dataContact_es.json";
+import dataContact_en from "./data/dataContact/dataContact_en.json";
 function Contact() {
+
   const { language } = useContext(LanguageContext);
-  const {
-    sectionTitle,
-    nameLabel,
-    emailLabel,
-    messageLabel,
-    submitButton,
-    contactDetailsTitle,
-    phoneNumber,
-    emailAddress,
-    address,
-  } = dataContact[language];
+  const dataContact = language === "es" ? dataContact_es.es : dataContact_en.en;
+  const { sectionTitle, nameLabel, emailLabel,messageLabel, submitButton, contactDetailsTitle, phoneNumber, emailAddress, address  } = dataContact;
 
   return (
     <section id="contact" className="py-8 bg-white dark:bg-gray-900 ">
