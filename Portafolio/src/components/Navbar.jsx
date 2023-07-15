@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { useContext } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { ThemeContext, LanguageContext } from "../providers/Context.jsx";
 
 function Navbar() {
@@ -11,9 +11,10 @@ function Navbar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-  const Theme = ({ children }) => {
-    const { theme, toggleTheme, isDarkMode } = useContext(ThemeContext);
+  // const Theme = ({ children }) => {
+  const Theme = () => {
+    // const { theme, toggleTheme, isDarkMode } = useContext(ThemeContext);
+    const { toggleTheme, isDarkMode } = useContext(ThemeContext);
 
     return (
       <div>
@@ -23,15 +24,16 @@ function Navbar() {
         >
           {isDarkMode ? <MdOutlineLightMode /> : <MdDarkMode />}
         </button>
-        {children}
+        {/* {children} */}
       </div>
     );
   };
 
-  Theme.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
-  const Lenguage = ({ children }) => {
+  // Theme.propTypes = {
+  //   children: PropTypes.node.isRequired,
+  // };
+  // const Lenguage = ({ children }) => {
+  const Lenguage = () => {
     const { language, changeLanguage, isEnglishMode } = useContext(LanguageContext);
     const toggleLanguage = () => {
       if (language === "en") {
@@ -48,13 +50,13 @@ function Navbar() {
         > 
           {isEnglishMode ? "ES" : "EN"}
         </button>
-        {children}
+        {/* {children} */}
       </div>
     );
   };
-  Lenguage.propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+  // Lenguage.propTypes = {
+  //   children: PropTypes.node.isRequired,
+  // };
   return (
     <div>
       <nav className="fixed top-0 left-0 right-0 z-10 p-5 bg-white dark:bg-gray-900 shadow-md flex items-center justify-between">
