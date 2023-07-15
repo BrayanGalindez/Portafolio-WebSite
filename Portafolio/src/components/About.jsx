@@ -1,12 +1,13 @@
 import foto from "../assets//About/perfil.png";
 import { useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
-import dataAbout from "../components/data/DataAbout.jsx";
+import dataAbout_es from "./data/DataAbout/DataAbout_es.json";
+import dataAbout_en from "./data/DataAbout/DataAbout_en.json";
 
 function About() {
   const { language } = useContext(LanguageContext);
-  const { greeting, description, button } = dataAbout[language];
-
+  const dataSkills = language === "es" ? dataAbout_es.es : dataAbout_en.en;
+  const { greeting, description, button  } = dataSkills;
   return (
     <section id="about" className="bg-white py-8 dark:bg-gray-900 mt-10">
       <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
