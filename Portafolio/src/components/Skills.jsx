@@ -17,16 +17,17 @@ import { useState, useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
 // import dataSkills from "../components/data/DataSkills.jsx";
 // import dataSkills from "./data/DataSkills.jsx";
+const dataSkills = {
+  es: {
+    title: "Habilidades",
+  },
+  en: {
+    title: "Skills",
+  },
+};
 
 function Skills() {
-  const dataSkills = {
-    es: {
-      title: "Habilidades",
-    },
-    en: {
-      title: "Skills",
-    },
-  };
+
   const [hoveredTechnology, setHoveredTechnology] = useState("");
 
   const { language } = useContext(LanguageContext);
