@@ -15,8 +15,8 @@ import java from "../assets/Skills/java.png";
 
 import { useState, useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
-import dataSkills from "../components/data/DataSkills.jsx";
-
+// import dataSkills from "../components/data/DataSkills.jsx";
+import dataSkills from "./data/DataSkills.jsx";
 function Skills() {
   const [hoveredTechnology, setHoveredTechnology] = useState("");
 
@@ -31,9 +31,9 @@ function Skills() {
   };
 
   return (
-    <section id="skills" className="bg-white py-8 dark:bg-gray-900 ">
+    <section id="skills" className="bg-white py-8 dark:bg-gray-900 mt-10 ">
       <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 dark:text-white mb-4">
-        Habilidades
+        {title}
       </h2>
       <div className="max-w-5xl mx-auto flex flex-wrap justify-center">
         <div
