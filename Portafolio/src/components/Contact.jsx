@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
-import dataContact_es from "./data/dataContact/dataContact_es.json";
-import dataContact_en from "./data/dataContact/dataContact_en.json";
+import dataContact_es from "./data/DataContact/DataContact_es.json";
+import dataContact_en from "./data/DataContact/DataContact_en.json";
 function Contact() {
 
   const { language } = useContext(LanguageContext);
