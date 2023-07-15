@@ -13,7 +13,7 @@ import tailwind from "../assets/Skills/tailwind.png";
 import python from "../assets/Skills/python.png";
 import java from "../assets/Skills/java.png";
 
-import { useState, useContext } from "react";
+import { useState, useContext} from "react";
 import { LanguageContext } from "../providers/Context.jsx";
 import dataSkills_es from "./data/DataSkills/DataSkills_es.json";
 import dataSkills_en from "./data/DataSkills/DataSkills_en.json";
