@@ -1,0 +1,55 @@
+{
+    "en": [
+      {
+        "title": "TuChaza",
+        "image": "Proyecto_TuChaza.png",
+        "description": "TuChaza is a web page specifically designed to facilitate the creation of small stores, known as 'chazas', at the National University of Colombia. The main objective of this platform is to connect the information of these stores within the university campus.",
+        "githubLink": "https://github.com/BrayanGalindez/TuChazaDefinitive",
+        "webLink": "https://www.example.com/project1",
+        "status": "Finished",
+        "technologies": [
+          "react",
+          "node.js",
+          "bootstrap",
+          "mongodb",
+          "html",
+          "js"
+        ]
+      },
+      {
+        "title": "BogoTaste",
+        "image": "Proyecto_PapitasConSoftware.png",
+        "description": "BogoTaste is a web page designed to provide users in the city of Bogotá with a compilation of reviews of local restaurants. Its goal is to provide users with detailed and reliable information about the city's restaurants so they can make informed decisions when choosing where to eat.",
+        "githubLink": "https://github.com/BrayanGalindez/PapitasConSoftware",
+        "webLink": "https://www.example.com/project2",
+        "status": "In progress",
+        "technologies": [
+          "react",
+          "node.js",
+          "mongodb",
+          "html",
+          "css",
+          "js",
+          "fastapi"
+        ]
+      },
+      {
+        "title": "Mis notas",
+        "image": "Proyecto_Notas.png",
+        "description": "Mis Notas is a website designed to offer you a simple and practical way to keep track of your homework. With this tool, you can quickly record your pending tasks, assign deadlines to them, and mark them as completed once you've finished them. With Mis Notas, you can keep an organized track of your homework and make sure you don't forget any important tasks. Simplify your academic life with Mis Notas and efficiently manage your tasks.",
+        "githubLink": "https://github.com/BrayanGalindez/FARM-Stack-CRUD",
+        "webLink": "https://www.example.com/project2",
+        "status": "In progress",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "mongodb",
+          "html",
+          "js",
+          "fastapi",
+          "tailwind"
+        ]
+      }
+    ]
+  }
