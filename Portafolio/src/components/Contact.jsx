@@ -1,59 +1,82 @@
-// import React from 'react'
+import { useContext } from "react";
+import { LanguageContext } from "../providers/Context.jsx";
+import dataContact from "../components/data/DataContact.jsx";
 
 function Contact() {
+  const { language } = useContext(LanguageContext);
+  const {
+    sectionTitle,
+    nameLabel,
+    emailLabel,
+    messageLabel,
+    submitButton,
+    contactDetailsTitle,
+    phoneNumber,
+    emailAddress,
+    address,
+  } = dataContact[language];
+
   return (
-    <section id="contact" className="py-8">
+    <section id="contact" className="py-8 bg-white dark:bg-gray-900 ">
       <div className="max-w-5xl mx-auto">
         <div className="max-w-md mx-auto py-8">
-          <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 mb-4 text-center">
-            Contactame
-          </h2>
-          <form>
-            <div className="mb-4">
-              <label className="block mb-2 text-lg font-medium" htmlFor="name">
-                Nombre
-              </label>
-              <input
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                type="text"
-                id="name"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block mb-2 text-lg font-medium" htmlFor="email">
-                Correo electrónico
-              </label>
-              <input
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                type="email"
-                id="email"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                className="block mb-2 text-lg font-medium"
-                htmlFor="message"
+          <div className="bg-gray-200 dark:bg-indigo-950 rounded-lg shadow-md p-6">
+            <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 dark:text-white  mb-4 text-center">
+              {sectionTitle}
+            </h2>
+            <form>
+              <div className="mb-4">
+                <label
+                  className="block mb-2 text-lg font-medium dark:text-white"
+                  htmlFor="name"
+                >
+                  {nameLabel}
+                </label>
+                <input
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                  type="text"
+                  id="name"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block mb-2 text-lg font-medium dark:text-white"
+                  htmlFor="email"
+                >
+                  {emailLabel}
+                </label>
+                <input
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                  type="email"
+                  id="email"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block mb-2 text-lg font-medium dark:text-white"
+                  htmlFor="message"
+                >
+                  {messageLabel}
+                </label>
+                <textarea
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                  id="message"
+                  rows="4"
+                ></textarea>
+              </div>
+              <button
+                className="bg-blue-500 dark:bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-slate-700"
+                type="submit"
               >
-                Mensaje
-              </label>
-              <textarea
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                id="message"
-                rows="4"
-              ></textarea>
+                {submitButton}
+              </button>
+            </form>
+            <div className="mt-8 dark:text-white">
+              <h3 className="text-xl font-bold mb-2">{contactDetailsTitle}</h3>
+              <p>{phoneNumber}</p>
+              <p>{emailAddress}</p>
+              <p>{address}</p>
             </div>
-            <button
-              className="bg-slate-600 text-white px-4 py-2 rounded-md hover:bg-slate-700"
-              type="submit"
-            >
-              Enviar
-            </button>
-          </form>
-          <div className="mt-8">
-            <h3 className="text-xl font-bold mb-2">Detalles de contacto</h3>
-            <p>Teléfono:+573156644896</p>
-            <p>Correo electrónico: brayantobo@gmail.com</p>
-            <p>Dirección: Bogota, Colombia</p>
           </div>
         </div>
       </div>
