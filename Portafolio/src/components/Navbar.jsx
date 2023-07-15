@@ -46,7 +46,7 @@ function Navbar() {
           onClick={toggleLanguage}
           className="bg-slate-600 dark:bg-white dark:text-black text-white font-bold px-4 py-2 rounded-full hover:bg-slate-700 mt-2"
         > 
-          {isEnglishMode ? "EN" : "ES"}
+          {isEnglishMode ? "ES" : "EN"}
         </button>
         {children}
       </div>
