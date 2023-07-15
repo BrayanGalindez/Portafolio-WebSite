@@ -1,0 +1,55 @@
+{
+    "es": [
+      {
+        "title": "TuChaza",
+        "image": "Proyecto_TuChaza.png",
+        "description": "TuChaza es una página web diseñada específicamente para facilitar la creación de pequeñas tiendas, conocidas como 'chazas', en la Universidad Nacional de Colombia. Esta plataforma tiene como objetivo principal conectar la información de estas tiendas dentro del campus universitario.",
+        "githubLink": "https://github.com/BrayanGalindez/TuChazaDefinitive",
+        "webLink": "https://www.example.com/project1",
+        "status": "Finalizado",
+        "technologies": [
+          "react",
+          "node.js",
+          "bootstrap",
+          "mongodb",
+          "html",
+          "js"
+        ]
+      },
+      {
+        "title": "BogoTaste",
+        "image": "Proyecto_PapitasConSoftware.png",
+        "description": "BogoTaste es una página web diseñada con el propósito de proporcionar a los usuarios de la ciudad de Bogotá una recopilación de reseñas de restaurantes locales. Su objetivo es brindar a los usuarios información detallada y confiable sobre los restaurantes de la ciudad, para que puedan tomar decisiones informadas al elegir dónde comprar comida.",
+        "githubLink": "https://github.com/BrayanGalindez/PapitasConSoftware",
+        "webLink": "https://www.example.com/project2",
+        "status": "En proceso",
+        "technologies": [
+          "react",
+          "node.js",
+          "mongodb",
+          "html",
+          "css",
+          "js",
+          "fastapi"
+        ]
+      },
+      {
+        "title": "Mis notas",
+        "image": "Proyecto_Notas.png",
+        "description": "Mis Notas es un sitio web diseñado para ofrecerte una forma sencilla y práctica de guardar tus notas de deberes. Con esta herramienta, podrás registrar rápidamente tus tareas pendientes, asignarles fechas límite y marcarlas como completadas una vez que las hayas realizado. Con Mis Notas, podrás mantener un seguimiento organizado de tus deberes y asegurarte de no olvidar ninguna tarea importante. Simplifica tu vida académica con Mis Notas y mantén tus tareas bajo control de manera eficiente.",
+        "githubLink": "https://github.com/BrayanGalindez/FARM-Stack-CRUD",
+        "webLink": "https://www.example.com/project2",
+        "status": "En proceso",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "mongodb",
+          "html",
+          "js",
+          "fastapi",
+          "tailwind"
+        ]
+      }
+    ]
+  }
