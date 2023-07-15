@@ -2,20 +2,40 @@ import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { useContext } from "react";
-// import PropTypes from "prop-types";
 import { ThemeContext, LanguageContext } from "../providers/Context.jsx";
+import PropTypes from "prop-types";
 
-function Navbar() {
+function Navbar(props) {
+  const {
+    aboutRef,
+    skillsRef,
+    projectsRef,
+    educationRef,
+    contactRef,
+  } = props;
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+  const scrollToSectionStart = (ref) => {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+  
+
+  
+  const { language } = useContext(LanguageContext);
   const [menuOpen, setMenuOpen] = useState(true);
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  // const Theme = ({ children }) => {
-  const Theme = () => {
-    // const { theme, toggleTheme, isDarkMode } = useContext(ThemeContext);
-    const { toggleTheme, isDarkMode } = useContext(ThemeContext);
 
+  const Theme = () => {
+    const { toggleTheme, isDarkMode } = useContext(ThemeContext);
     return (
       <div>
         <button
@@ -24,17 +44,19 @@ function Navbar() {
         >
           {isDarkMode ? <MdOutlineLightMode /> : <MdDarkMode />}
         </button>
-        {/* {children} */}
       </div>
     );
   };
-
-  // Theme.propTypes = {
-  //   children: PropTypes.node.isRequired,
-  // };
-  // const Lenguage = ({ children }) => {
+  Navbar.propTypes = {
+    aboutRef: PropTypes.object,
+    projectsRef: PropTypes.object,
+    skillsRef: PropTypes.object,
+    educationRef: PropTypes.object,
+    contactRef: PropTypes.object,
+  };
   const Lenguage = () => {
-    const { language, changeLanguage, isEnglishMode } = useContext(LanguageContext);
+    const { language, changeLanguage, isEnglishMode } =
+      useContext(LanguageContext);
     const toggleLanguage = () => {
       if (language === "en") {
         changeLanguage("es");
@@ -47,19 +69,16 @@ function Navbar() {
         <button
           onClick={toggleLanguage}
           className="bg-slate-600 dark:bg-white dark:text-black text-white font-bold px-4 py-2 rounded-full hover:bg-slate-700 mt-2"
-        > 
+        >
           {isEnglishMode ? "ES" : "EN"}
         </button>
         {/* {children} */}
       </div>
     );
   };
-  // Lenguage.propTypes = {
-  //   children: PropTypes.node.isRequired,
-  // };
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-10 p-5 bg-white dark:bg-gray-900 shadow-md flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow-md flex items-center justify-between">
         <div className="flex justify-between items-center">
           <span className="text-2xl font-[Poppins] cursor-pointer">
             <img
@@ -80,33 +99,61 @@ function Navbar() {
             <li className="mx-4 my-6 md:my-0">
               <a
                 href="#about"
+                onClick={(e) => {
+                  e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                  scrollToSection(aboutRef); // Desplaza suavemente a la sección "About"
+                }}
                 className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
               >
-                Sobre mi
-              </a>
-            </li>
-            <li className="mx-4 my-6 md:my-0">
-              <a
-                href="#projects"
-                className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
-              >
-                Proyectos
+                {language === "en" ? "About" : "Sobre mi"}
               </a>
             </li>
             <li className="mx-4 my-6 md:my-0">
               <a
                 href="#skills"
+                onClick={(e) => {
+                  e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                  scrollToSection(skillsRef); // Desplaza suavemente a la sección "About"
+                }}
                 className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
               >
-                Conocimientos
+                {language === "en" ? "Skills" : "Habilidades"}
+              </a>
+            </li>
+            <li className="mx-4 my-6 md:my-0">
+              <a
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                  scrollToSectionStart(projectsRef); // Desplaza suavemente a la sección "About"
+                }}
+                className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
+              >
+                {language === "en" ? "Projects" : "Proyectos"}
+              </a>
+            </li>
+            <li className="mx-4 my-6 md:my-0">
+              <a
+                href="#education"
+                onClick={(e) => {
+                  e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                  scrollToSection(educationRef); // Desplaza suavemente a la sección "About"
+                }}
+                className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
+              >
+                {language === "en" ? "Education" : "Educacion"}
               </a>
             </li>
             <li className="mx-4 my-6 md:my-0">
               <a
                 href="#contact"
+                onClick={(e) => {
+                  e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+                  scrollToSectionStart(contactRef); // Desplaza suavemente a la sección "About"
+                }}
                 className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
               >
-                Contacto
+                {language === "en" ? "Contact" : "Contacto"}
               </a>
             </li>
             <li className="mx-4 my-6 md:my-0">
@@ -115,7 +162,6 @@ function Navbar() {
             <li className="mx-4 my-6 md:my-0">
               <Lenguage>{/* Contenido aquí */}</Lenguage>
             </li>
-
           </ul>
           <span
             className="text-3xl cursor-pointer text-black dark:text-white  "
