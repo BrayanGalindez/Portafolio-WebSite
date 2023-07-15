@@ -13,13 +13,13 @@ function Home() {
           <Skills />
         </div>
         <div >
-          <Projects />
+          {/* <Projects /> */}
         </div>
         <div >
-          <Education />
+          {/* <Education /> */}
         </div>
         <div >
-          <Contact />
+          {/* <Contact /> */}
         </div>
       </div>
   );
