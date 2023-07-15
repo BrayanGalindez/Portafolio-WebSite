@@ -6,15 +6,15 @@ import Home from "../src/pages/Home.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div id="root" className="flex flex-col min-h-screen">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+        <BrowserRouter>
+          <div id="root" className="flex flex-col min-h-screen">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+            <Footer />
+          </div>
+        </BrowserRouter>
   );
 }
 export default App;
