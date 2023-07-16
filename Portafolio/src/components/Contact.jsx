@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import flag from "../assets/Contact/Colombia.png";
 import dataContact_es from "./data/DataContact/DataContact_es.json";
 import dataContact_en from "./data/DataContact/DataContact_en.json";
 function Contact() {
@@ -90,12 +92,37 @@ function Contact() {
                 <input type="hidden" name="_captcha" value="false"></input>
               </form>
               <div className="mt-8 dark:text-white">
-                <h3 className="text-xl font-bold mb-2">
+                <h3 className="text-2xl font-bold mb-2">
                   {contactDetailsTitle}
                 </h3>
-                <p>{phoneNumber}</p>
-                <p>{emailAddress}</p>
-                <p>{address}</p>
+                <div className="flex items-center">
+                  <img
+                    src={flag}
+                    alt="flag"
+                    className="w-6 mr-2"
+                  />
+                  <p className="text-lg">{phoneNumber}</p>
+                </div>
+                <p className="text-lg">{emailAddress}</p>
+                <p className="text-lg">{address}</p>
+                <div className="flex justify-center mt-8">
+                  <a
+                    href="https://github.com/BrayanGalindez"
+                    className="justify-center text-6xl cursor-pointer ml-4 text-gray-800 dark:text-white dark:hover:text-purple-500 hover:text-purple-500 duration-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillGithub />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/brayangalindez24/"
+                    className="justify-center  text-6xl cursor-pointer ml-4 text-gray-800 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 duration-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillLinkedin />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
