@@ -52,26 +52,9 @@ function Navbar(props) {
     educationRef: PropTypes.object,
     contactRef: PropTypes.object,
   };
-  const scrollToAbout = () => {
-    aboutRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-    setMenuOpen(false);
-  };
-  const scrollToProjects = () => {
-    projectsRef.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-    setMenuOpen(false);
-  };
-  
-
-
   return (
     <div>
-      <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow-md">
+      <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow-md ">
         <div className="flex justify-between items-center">
           <span className="text-2xl font-[Poppins] cursor-pointer">
             <img
@@ -99,7 +82,10 @@ function Navbar(props) {
           <li className="mx-4 my-6 md:my-0">
             <a
               href="#about"
-              onClick={scrollToAbout}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(aboutRef);
+              }}
               className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
             >
               {language === "en" ? "About" : "Sobre mi"}
@@ -121,7 +107,10 @@ function Navbar(props) {
           <li className="mx-4 my-6 md:my-0">
             <a
               href="#projects"
-              onClick={scrollToProjects}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSectionStart(projectsRef);
+              }}
               className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
             >
               {language === "en" ? "Projects" : "Proyectos"}
