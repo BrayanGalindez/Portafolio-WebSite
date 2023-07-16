@@ -85,7 +85,7 @@ function Contact() {
                 <input
                   type="hidden"
                   name="_next"
-                  value={"http://127.0.0.1:5173/"}
+                  value={"https://rad-salamander-b5e003.netlify.app/"}
                 ></input>
                 <input type="hidden" name="_captcha" value="false"></input>
               </form>
