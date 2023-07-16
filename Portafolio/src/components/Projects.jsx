@@ -17,6 +17,7 @@ import dataProjects_es from "./data/DataProjects/DataProjects_es.json";
 import Img_proyecto1 from "../assets/Projects/Proyecto_TuChaza.png";
 import Img_proyecto2 from "../assets/Projects/Proyecto_PapitasConSoftware.png";
 import Img_proyecto3 from "../assets/Projects/Proyecto_Notas.png";
+import Img_proyecto4 from "../assets/Projects/Proyecto_Portafolio.png";
 
 function Projects() {
   const { language } = useContext(LanguageContext);
@@ -60,7 +61,11 @@ function Projects() {
                       ? Img_proyecto1
                       : project.image === "Proyecto_PapitasConSoftware.png"
                       ? Img_proyecto2
-                      : Img_proyecto3
+                      : project.image === "Proyecto_Notas.png"
+                      ? Img_proyecto3 
+                      : project.image === "Proyecto_Portafolio.png"
+                      ? Img_proyecto4
+                      : ""
                   }
                   alt={project.title}
                   className="w-full h-auto mb-4"
