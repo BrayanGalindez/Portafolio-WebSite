@@ -1,4 +1,3 @@
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { CiLocationOn } from 'react-icons/ci';
 
 function Footer() {
@@ -11,24 +10,7 @@ function Footer() {
           </a>
           <a className='text-xl text-gray-800 dark:text-white'>Colombia-Bogota</a>
         </div>
-        <div className="flex">
-          <a
-            href="https://github.com/BrayanGalindez"
-            className="text-3xl cursor-pointer ml-2 text-gray-800 dark:text-white dark:hover:text-purple-500 hover:text-purple-500 duration-500"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiFillGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/brayangalindez24/"
-            className="text-3xl cursor-pointer ml-2 text-gray-800 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 duration-500"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiFillLinkedin />
-          </a>
-        </div>
+        
       </div>
     </footer>
   );
