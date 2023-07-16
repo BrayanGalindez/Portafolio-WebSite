@@ -50,6 +50,22 @@
           "fastapi",
           "tailwind"
         ]
+      },
+      {
+        "title": "Portafolio",
+        "image": "Proyecto_Portafolio.png",
+        "description": "Mi Portafolio es un sitio web que muestra mis proyectos, conocimientos y enfoque de trabajo. Incorpora funcionalidades como cambio de tema (oscuro y claro) y cambio de idioma (español e inglés) para personalizar la experiencia del usuario. La barra de navegación permite acceder rápidamente a diferentes secciones, como proyectos, habilidades y educación. Además, cuenta con un formulario de contacto para establecer comunicación directa. Mi portafolio brinda una experiencia agradable y funcional, facilitando la navegación, la personalización y el contacto conmigo. ¡Explora mi trabajo y contáctame para obtener más información!",
+        "githubLink": "https://github.com/BrayanGalindez/Portafolio-WebSite",
+        "webLink": "https://www.example.com/project2",
+        "status": "Finished",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "html",
+          "js",
+          "tailwind"
+        ]
       }
     ]
   }
