@@ -29,7 +29,10 @@ function Contact() {
               <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 dark:text-white  mb-4 text-center">
                 {sectionTitle}
               </h2>
-              <form>
+              <form
+                action="https://formsubmit.co/7a861569dcdf179c9298e77833cd56d9"
+                method="POST"
+              >
                 <div className="mb-4">
                   <label
                     className="block mb-2 text-lg font-medium dark:text-white"
@@ -41,6 +44,7 @@ function Contact() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                     type="text"
                     id="name"
+                    name="name"
                   />
                 </div>
                 <div className="mb-4">
@@ -54,6 +58,7 @@ function Contact() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                     type="email"
                     id="email"
+                    name="email"
                   />
                 </div>
                 <div className="mb-4">
@@ -67,6 +72,8 @@ function Contact() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                     id="message"
                     rows="4"
+                    name="message"
+                    type="message"
                   ></textarea>
                 </div>
                 <button
@@ -75,6 +82,12 @@ function Contact() {
                 >
                   {submitButton}
                 </button>
+                <input
+                  type="hidden"
+                  name="_next"
+                  value={"http://127.0.0.1:5173/"}
+                ></input>
+                <input type="hidden" name="_captcha" value="false"></input>
               </form>
               <div className="mt-8 dark:text-white">
                 <h3 className="text-xl font-bold mb-2">
