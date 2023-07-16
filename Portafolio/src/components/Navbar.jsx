@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import {BsFillBriefcaseFill} from "react-icons/bs";
 import { useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
 import PropTypes from "prop-types";
@@ -55,17 +56,10 @@ function Navbar(props) {
   return (
     <div>
       <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow-md ">
-        <div className="flex justify-between items-center">
-          <span className="text-2xl font-[Poppins] cursor-pointer">
-            <img
-              className="h-10 inline"
-              src="https://apkdirectory.com/logos/world-war-z.jpg"
-              alt="Logo"
-            />
-          </span>
+        <div className="flex justify-between">
           {window.innerWidth <= 768 && (
             <span
-              className="text-3xl cursor-pointer text-black dark:text-white"
+              className="text-3xl cursor-pointer text-black dark:text-white ml-auto"
               onClick={toggleMenu}
             >
               <AiOutlineMenu />
@@ -77,9 +71,19 @@ function Navbar(props) {
             menuOpen
               ? "opacity-100 max-h-screen"
               : "opacity-0 max-h-0 md:opacity-100 md:max-h-screen"
-          } md:flex md:items-center md:static w-full md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:bg-opacity-100 transition-all ease-in duration-500 overflow-hidden`}
+          } justify-end md:flex md:items-center md:static w-full md:w-auto  md:bg-opacity-100 transition-all ease-in duration-500 overflow-hidden ml-auto`}
         >
-          <li className="mx-4 my-6 md:my-0">
+          <div className="flex mr-auto">
+            <span className="text-2xl text-black dark:text-white font-[Poppins] cursor-pointer ">
+              {/* <img
+                className="h-10 inline"
+                src="https://apkdirectory.com/logos/world-war-z.jpg"
+                alt="Logo"
+              /> */}
+              <BsFillBriefcaseFill />
+            </span>
+          </div>
+          <li className="mx-4 my-6 md:my-0 ">
             <a
               href="#about"
               onClick={(e) => {
@@ -90,7 +94,6 @@ function Navbar(props) {
             >
               {language === "en" ? "About" : "Sobre mi"}
             </a>
-    
           </li>
           <li className="mx-4 my-6 md:my-0">
             <a
