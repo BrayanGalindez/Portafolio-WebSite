@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Skills from "../components/Skills.jsx";
 import Projects from "../components/Projects.jsx";
@@ -7,8 +7,13 @@ import Education from "../components/Education.jsx";
 import Contact from "../components/Contact.jsx";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { ThemeContext, LanguageContext } from "../providers/Context.jsx";
-import { useContext } from "react";
+import { useContext, useState, useEffect  } from "react";
 function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
+  const [navbarHeight, setNavbarHeight] = useState(0);
+  useEffect(() => {
+    const navbar = document.querySelector("nav");
+    setNavbarHeight(navbar.offsetHeight);
+  }, []);
   const Lenguage = () => {
     const { language, changeLanguage, isEnglishMode } =
       useContext(LanguageContext);
@@ -47,7 +52,17 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
   };
   return (
     <div className="bg-white dark:bg-gray-900 flex-grow">
-      <div  ref={aboutRef}>
+      <div>
+        <Navbar
+          aboutRef={aboutRef}
+          skillsRef={skillsRef}
+          projectsRef={projectsRef}
+          educationRef={educationRef}
+          contactRef={contactRef}
+        />
+      </div>
+
+      <div ref={aboutRef} style={{ marginTop: navbarHeight }}>
         <About />
       </div>
       <div ref={skillsRef}>
@@ -63,11 +78,11 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
         <Contact />
       </div>
       <ul className="fixed bottom-0 right-0 flex flex-col items-end m-4 space-y-4 mb-20">
-        <li >
-          <Theme/>
+        <li>
+          <Theme />
         </li>
         <li>
-          <Lenguage/>
+          <Lenguage />
         </li>
       </ul>
     </div>
