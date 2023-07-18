@@ -14,7 +14,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div id="root" className="flex flex-col min-h-screen">
+      <div id="root" className="flex flex-col min-h-screen overflow-hidden sm:overflow-auto">
         <Routes>
           <Route
             path="/"
@@ -29,7 +29,7 @@ function App() {
             }
           />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );
