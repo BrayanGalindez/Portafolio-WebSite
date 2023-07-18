@@ -76,7 +76,7 @@ function Navbar(props) {
             menuOpen
               ? "opacity-100 max-h-screen"
               : "opacity-0 max-h-0 md:opacity-100 md:max-h-screen"
-          } justify-end md:flex md:items-center md:static w-full md:w-auto  md:bg-opacity-100 transition-all ease-in duration-500 overflow-hidden ml-auto`}
+          } justify-end md:flex md:items-center md:static w-full md:w-auto  md:bg-opacity-100 transition-all ease-in duration-500  ml-auto`}
         >
           <div className="flex mr-auto">
             {/* <span className="text-2xl text-black dark:text-white font-[Poppins] cursor-pointer ">
