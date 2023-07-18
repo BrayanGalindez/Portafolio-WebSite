@@ -77,14 +77,14 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
       <div ref={contactRef}>
         <Contact />
       </div>
-      {/* <ul className="fixed bottom-0 right-0 flex flex-col items-end m-4 space-y-4 mb-20">
+      <ul className="fixed bottom-0 right-0 flex flex-col items-end m-4 space-y-4 mb-20">
         <li>
           <Theme />
         </li>
         <li>
           <Lenguage />
         </li>
-      </ul> */}
+      </ul>
     </div>
   );
 }
