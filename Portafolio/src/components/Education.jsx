@@ -35,7 +35,7 @@ function Education() {
     <section id="education" className="py-8 bg-white dark:bg-gray-900 ">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-800 mb-4 dark:text-white">
-          Educación
+        {language === "en" ? "Education" : "Educacion"}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
           {dataEducation.map((certification, index) => (
@@ -58,7 +58,7 @@ function Education() {
                       : Img3
                   }
                   alt="Certificado"
-                  className="h-16 float-right ml-auto mb-2 opacity-70"
+                  className="rounded h-16 float-right ml-auto mb-2 opacity-70"
                 />
               )}
               {showMore[index] ? (
@@ -85,7 +85,7 @@ function Education() {
                   </a>
                   <button
                     onClick={() => handleShowLess(index)}
-                    className="bg-blue-500 dark:bg-indigo-600 text-white font-bold px-4 py-2 rounded hover:bg-slate-700 mt-4"
+                    className="bg-blue-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded hover:bg-slate-700 mt-4"
                   >
                     {language === "en" ? "Show Less" : "Ver menos"}
                   </button>
@@ -93,7 +93,7 @@ function Education() {
               ) : (
                 <button
                   onClick={() => handleShowMore(index)}
-                  className="bg-blue-500 dark:bg-indigo-600 text-white font-bold px-4 py-2 rounded hover:bg-slate-700 mt-4"
+                  className="bg-blue-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-bold px-4 py-2 rounded hover:bg-slate-700 mt-4"
                 >
                   {language === "en" ? "Show More" : "Ver más"}
                 </button>
