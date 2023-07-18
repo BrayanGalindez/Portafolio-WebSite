@@ -79,7 +79,7 @@ function Contact() {
                   ></textarea>
                 </div>
                 <button
-                  className="bg-blue-500 dark:bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-slate-700"
+                  className="bg-blue-500 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white px-4 py-2 rounded-md hover:bg-slate-700"
                   type="submit"
                 >
                   {submitButton}
@@ -116,7 +116,7 @@ function Contact() {
                   </a>
                   <a
                     href="https://www.linkedin.com/in/brayangalindez24/"
-                    className="justify-center  text-6xl cursor-pointer ml-4 text-gray-800 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 duration-500"
+                    className=" transition-transform transform hover:scale-105 justify-center  text-6xl cursor-pointer ml-4 text-gray-800 dark:text-white dark:hover:text-cyan-500 hover:text-cyan-500 duration-500"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
