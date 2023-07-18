@@ -2,41 +2,38 @@ import PropTypes from "prop-types";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Skills from "../components/Skills.jsx";
-import Projects from "../components/Projects.jsx";
+// import Projects from "../components/Projects.jsx";
+import Projects2 from "../components/Projects2";
 import Education from "../components/Education.jsx";
 import Contact from "../components/Contact.jsx";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { ThemeContext, LanguageContext } from "../providers/Context.jsx";
-import { useContext, useState, useEffect  } from "react";
+import { useContext, useState, useEffect } from "react";
 function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
-  const [navbarHeight, setNavbarHeight] = useState(0);
-  useEffect(() => {
-    const navbar = document.querySelector("nav");
-    setNavbarHeight(navbar.offsetHeight);
-  }, []);
   const Lenguage = () => {
-    const { language, changeLanguage, isEnglishMode } =
-      useContext(LanguageContext);
-    const toggleLanguage = () => {
-      if (language === "en") {
-        changeLanguage("es");
-      } else {
-        changeLanguage("en");
+    const { language, toggleLanguageMode, isEnglishMode } = useContext(LanguageContext);
+    const [languageReady, setLanguageReady] = useState(false);
+    useEffect(() => {
+      if (language) {
+        setLanguageReady(true);
       }
-    };
+    }, [language]);
+
+    if (!languageReady) {
+      return null; // O muestra un estado de carga si lo prefieres
+    }
+
     return (
       <div>
         <button
-          onClick={toggleLanguage}
+          onClick={toggleLanguageMode}
           className="bg-slate-600 dark:bg-white dark:text-black text-white font-bold px-4 py-2 rounded-full hover:bg-slate-700 mt-2"
         >
           {isEnglishMode ? "ES" : "EN"}
         </button>
-        {/* {children} */}
       </div>
     );
   };
-
   const Theme = () => {
     const { toggleTheme, isDarkMode } = useContext(ThemeContext);
     return (
@@ -62,14 +59,17 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
         />
       </div>
 
-      <div ref={aboutRef} style={{ marginTop: navbarHeight }}>
+      <div className="mt-20" ref={aboutRef}>
         <About />
       </div>
       <div ref={skillsRef}>
         <Skills />
       </div>
-      <div ref={projectsRef}>
+      {/* <div ref={projectsRef}>
         <Projects />
+      </div> */}
+      <div ref={projectsRef}>
+        <Projects2 />
       </div>
       <div ref={educationRef}>
         <Education />
@@ -77,14 +77,14 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
       <div ref={contactRef}>
         <Contact />
       </div>
-      <ul className="fixed bottom-0 right-0 flex flex-col items-end m-4 space-y-4 mb-20">
+      {/* <ul className="fixed bottom-0 right-0 flex flex-col items-end m-4 space-y-4 mb-20">
         <li>
           <Theme />
         </li>
         <li>
           <Lenguage />
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
