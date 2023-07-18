@@ -6,9 +6,11 @@ import Skills from "../components/Skills.jsx";
 import Projects2 from "../components/Projects2";
 import Education from "../components/Education.jsx";
 import Contact from "../components/Contact.jsx";
+import Contact2 from "../components/Contact2.jsx";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { ThemeContext, LanguageContext } from "../providers/Context.jsx";
 import { useContext, useState, useEffect } from "react";
+import Footer from "../components/Footer";
 function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
   const Lenguage = () => {
     const { language, toggleLanguageMode, isEnglishMode } = useContext(LanguageContext);
@@ -48,7 +50,7 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
     );
   };
   return (
-    <div className="bg-white dark:bg-gray-900 flex-grow">
+    <div className="bg-white dark:bg-gray-900 flex-grow ">
       <div>
         <Navbar
           aboutRef={aboutRef}
@@ -65,9 +67,6 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
       <div ref={skillsRef}>
         <Skills />
       </div>
-      {/* <div ref={projectsRef}>
-        <Projects />
-      </div> */}
       <div ref={projectsRef}>
         <Projects2 />
       </div>
@@ -75,8 +74,12 @@ function Home({ aboutRef, projectsRef, skillsRef, contactRef, educationRef }) {
         <Education />
       </div>
       <div ref={contactRef}>
-        <Contact />
+        <Contact2 />
       </div>
+      <div>
+        <Footer />
+      </div>
+      <></>
       <ul className="fixed bottom-0 right-0 flex flex-col items-end m-4 space-y-4 mb-20">
         <li>
           <Theme />
