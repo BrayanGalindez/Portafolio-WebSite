@@ -43,7 +43,7 @@ function Education() {
               key={index}
               className={`bg-gray-200 dark:bg-indigo-950 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:scale-105 ${
                 showMore[index] ? "expanded" : ""
-              }`}
+              }mx-4 md:mx-0`}
             >
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                 {certification.title}
