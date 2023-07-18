@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import {BsFillBriefcaseFill} from "react-icons/bs";
+import { BsFillBriefcaseFill } from "react-icons/bs";
 import { useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
 import PropTypes from "prop-types";
+import dataNavbar_en from "./data/DataNavbar/DataNavbar_en.json";
+import dataNavbar_es from "./data/DataNavbar/DataNavbar_es.json";
 
 function Navbar(props) {
   const { language } = useContext(LanguageContext);
+  const dataNabvar = language === "es" ? dataNavbar_es.es : dataNavbar_en.en;
+  const { about, skills, projects, education, contact } = dataNabvar;
   const { aboutRef, skillsRef, projectsRef, educationRef, contactRef } = props;
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({
@@ -53,6 +57,7 @@ function Navbar(props) {
     educationRef: PropTypes.object,
     contactRef: PropTypes.object,
   };
+
   return (
     <div>
       <nav className="fixed top-0 left-0 right-0 z-50 p-5 bg-white dark:bg-gray-900 shadow-md ">
@@ -74,12 +79,22 @@ function Navbar(props) {
           } justify-end md:flex md:items-center md:static w-full md:w-auto  md:bg-opacity-100 transition-all ease-in duration-500 overflow-hidden ml-auto`}
         >
           <div className="flex mr-auto">
-            <span className="text-2xl text-black dark:text-white font-[Poppins] cursor-pointer ">
-              {/* <img
+            {/* <span className="text-2xl text-black dark:text-white font-[Poppins] cursor-pointer ">
+              <img
                 className="h-10 inline"
                 src="https://apkdirectory.com/logos/world-war-z.jpg"
                 alt="Logo"
-              /> */}
+              />
+              <BsFillBriefcaseFill />
+            </span> */}
+            <span
+              className="text-2xl text-gray-800 hover:text-cyan-500 dark:hover:text-teal-400 dark:text-white font-[Poppins] cursor-pointer"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setMenuOpen(false);
+              }}
+              
+            >
               <BsFillBriefcaseFill />
             </span>
           </div>
@@ -90,9 +105,9 @@ function Navbar(props) {
                 e.preventDefault();
                 scrollToSection(aboutRef);
               }}
-              className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
+              className="text-xl text-gray-800 dark:text-white dark:hover:text-teal-400 hover:text-cyan-500 duration-500"
             >
-              {language === "en" ? "About" : "Sobre mi"}
+              {about}
             </a>
           </li>
           <li className="mx-4 my-6 md:my-0">
@@ -102,9 +117,9 @@ function Navbar(props) {
                 e.preventDefault();
                 scrollToSection(skillsRef);
               }}
-              className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
+              className="text-xl text-gray-800 dark:text-white dark:hover:text-teal-400 hover:text-cyan-500 duration-500"
             >
-              {language === "en" ? "Skills" : "Habilidades"}
+              {skills}
             </a>
           </li>
           <li className="mx-4 my-6 md:my-0">
@@ -114,9 +129,9 @@ function Navbar(props) {
                 e.preventDefault();
                 scrollToSectionStart(projectsRef);
               }}
-              className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
+              className="text-xl text-gray-800 dark:text-white dark:hover:text-teal-400 hover:text-cyan-500 duration-500"
             >
-              {language === "en" ? "Projects" : "Proyectos"}
+              {projects}
             </a>
           </li>
           <li className="mx-4 my-6 md:my-0">
@@ -126,9 +141,9 @@ function Navbar(props) {
                 e.preventDefault();
                 scrollToSection(educationRef);
               }}
-              className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
+              className="text-xl text-gray-800 dark:text-white dark:hover:text-teal-400 hover:text-cyan-500 duration-500"
             >
-              {language === "en" ? "Education" : "Educacion"}
+              {education}
             </a>
           </li>
           <li className="mx-4 my-6 md:my-0">
@@ -138,9 +153,9 @@ function Navbar(props) {
                 e.preventDefault();
                 scrollToSectionStart(contactRef);
               }}
-              className="text-xl text-gray-800 dark:text-white hover:text-cyan-500 duration-500"
+              className="text-xl text-gray-800 dark:text-white dark:hover:text-teal-400 hover:text-cyan-500 duration-500"
             >
-              {language === "en" ? "Contact" : "Contacto"}
+              {contact}
             </a>
           </li>
         </ul>
