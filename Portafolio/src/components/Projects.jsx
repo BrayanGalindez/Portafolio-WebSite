@@ -75,7 +75,7 @@ function Projects() {
                 </p>
                 <ul className="flex justify-center space-x-4">
                   {project.technologies.map((technology, index) => (
-                    <li key={index} className="text-4xl">
+                    <li key={index} className="text-4xl text-black dark:text-white">
                       {technology === "react" && <BiLogoReact />}
                       {technology === "node.js" && <LiaNodeJs />}
                       {technology === "tailwind" && <BiLogoTailwindCss />}
