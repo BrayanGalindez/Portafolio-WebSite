@@ -26,22 +26,28 @@ const getInitialLanguage = (languageKey) => {
   if (storedLanguage) {
     return storedLanguage;
   }
-  return navigator.language || "en";
+  const browserLanguage = navigator.language || "en";
+  return browserLanguage.split("-")[0]; // Tomar solo el código del idioma sin la región
 };
 
-const useStorageTheme = (themeKey, languageKey) => {
+const useStorageTheme = (themeKey) => {
   const [theme, setTheme] = useState(getInitialTheme(themeKey));
-  const [language, setLanguage] = useState(getInitialLanguage(languageKey));
 
   useEffect(() => {
     window.localStorage.setItem(themeKey, theme);
   }, [theme, themeKey]);
 
+  return [theme, setTheme];
+};
+
+const useStorageLanguage = (languageKey) => {
+  const [language, setLanguage] = useState(getInitialLanguage(languageKey));
+
   useEffect(() => {
     window.localStorage.setItem(languageKey, language);
   }, [language, languageKey]);
 
-  return [theme, setTheme, language, setLanguage];
+  return [language, setLanguage];
 };
 
 export const ThemeContext = createContext({
@@ -81,10 +87,10 @@ const ThemeProvider = ({ children }) => {
 };
 
 const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useStorageTheme("language"); // Remueve "language" de useStorageTheme
-  const [isEnglishMode, setIsEnglishMode] = useState(language === "en"); // Cambia "EN" a "en"
+  const [language, setLanguage] = useStorageLanguage("language");
+  const [isEnglishMode, setIsEnglishMode] = useState(language === "en");
   const oldLanguage = usePrevious(language);
-    
+
   useEffect(() => {
     document.documentElement.classList.remove(oldLanguage);
     document.documentElement.classList.add(language); // Cambia oldLanguage a language
@@ -92,7 +98,9 @@ const LanguageProvider = ({ children }) => {
   }, [language, oldLanguage]);
 
   const toggleLanguageMode = () => {
+    const newLanguage = isEnglishMode ? "es" : "en";
     setIsEnglishMode((prevMode) => !prevMode);
+    setLanguage(newLanguage); // Actualizar el estado del idioma
   };
 
   const changeLanguage = (lang) => {
