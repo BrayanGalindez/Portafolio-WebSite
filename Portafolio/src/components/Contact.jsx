@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import flag from "../assets/Contact/Colombia.png";
 import dataContact_es from "./data/DataContact/DataContact_es.json";
 import dataContact_en from "./data/DataContact/DataContact_en.json";
+import FloatingModal from "./FloatingModal";
 function Contact() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFormSubmitted] = useState(false);
+  const [isFormError] = useState(false);
   const { language } = useContext(LanguageContext);
   const dataContact = language === "es" ? dataContact_es.es : dataContact_en.en;
   const {
@@ -18,7 +22,9 @@ function Contact() {
     emailAddress,
     address,
   } = dataContact;
-
+  const handleSubmitForm = () => {
+    setIsModalOpen(true);
+  };
   return (
     <section>
       <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-white dark:text-gray-900  mb-4 text-center">
@@ -32,6 +38,7 @@ function Contact() {
                 {sectionTitle}
               </h2>
               <form
+                onSubmit={handleSubmitForm}
                 action="https://formsubmit.co/7a861569dcdf179c9298e77833cd56d9"
                 method="POST"
               >
@@ -84,11 +91,7 @@ function Contact() {
                 >
                   {submitButton}
                 </button>
-                <input
-                  type="hidden"
-                  name="_next"
-                  value={"https://rad-salamander-b5e003.netlify.app/"}
-                ></input>
+                <input type="hidden" name="_next" value="https://rad-salamander-b5e003.netlify.app/"></input>
                 <input type="hidden" name="_captcha" value="false"></input>
               </form>
               <div className="mt-8 dark:text-white">
@@ -96,11 +99,7 @@ function Contact() {
                   {contactDetailsTitle}
                 </h3>
                 <div className="flex items-center">
-                  <img
-                    src={flag}
-                    alt="flag"
-                    className="w-6 mr-2"
-                  />
+                  <img src={flag} alt="flag" className="w-6 mr-2" />
                   <p className="text-lg">{phoneNumber}</p>
                 </div>
                 <p className="text-lg">{emailAddress}</p>
@@ -128,6 +127,13 @@ function Contact() {
           </div>
         </div>
       </section>
+      {isModalOpen && (
+        <FloatingModal
+          isFormSubmitted={isFormSubmitted}
+          isFormError={isFormError}
+          closeModal={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 }
