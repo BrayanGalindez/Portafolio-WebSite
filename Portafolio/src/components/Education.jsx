@@ -33,17 +33,17 @@ function Education() {
 
   return (
     <section id="education" className="py-8 bg-white dark:bg-gray-900 ">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-800 mb-4 dark:text-white">
         {language === "en" ? "Education" : "Educacion"}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {dataEducation.map((certification, index) => (
             <div
               key={index}
               className={`bg-gray-200 dark:bg-indigo-950 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:scale-105 ${
                 showMore[index] ? "expanded" : ""
-              }mx-4 md:mx-0`}
+              }`}
             >
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                 {certification.title}
