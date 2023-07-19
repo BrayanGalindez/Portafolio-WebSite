@@ -69,7 +69,7 @@ function Projects() {
       id="about"
       className="bg-white py-8 dark:bg-gray-900 mt-16 style={{ marginTop: '80px' }}"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
           {language === "en" ? "Projects" : "Proyectos"}
         </h2>
