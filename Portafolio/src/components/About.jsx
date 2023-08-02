@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { LanguageContext } from "../providers/Context.jsx";
 import dataAbout_es from "./data/DataAbout/DataAbout_es.json";
 import dataAbout_en from "./data/DataAbout/DataAbout_en.json";
-import cv from "../assets/About/cv.pdf";
+import cv from "../assets/About/CV.pdf";
 function About() {
   const { language } = useContext(LanguageContext);
   const dataSkills = language === "es" ? dataAbout_es.es : dataAbout_en.en;
