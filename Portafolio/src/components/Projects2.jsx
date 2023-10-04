@@ -10,6 +10,7 @@ import { AiFillHtml5 } from "react-icons/ai";
 import { BiLogoCss3 } from "react-icons/bi";
 import { BiLogoBootstrap } from "react-icons/bi";
 import { SiVite } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 import { useContext } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -21,6 +22,7 @@ import Img_proyecto1 from "../assets/Projects/Proyecto_TuChaza.png";
 import Img_proyecto2 from "../assets/Projects/Proyecto_PapitasConSoftware.png";
 import Img_proyecto3 from "../assets/Projects/Proyecto_Notas.png";
 import Img_proyecto4 from "../assets/Projects/Proyecto_Portafolio.png";
+import Img_proyecto5 from "../assets/Projects/Proyecto_BankSaintPatrick.png";
 
 function Projects() {
   const { language } = useContext(LanguageContext);
@@ -82,14 +84,14 @@ function Projects() {
                 className=" bg-gray-200 dark:bg-indigo-950 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:scale-105 relative "
               >
                 <div
-                  className={`status-badge ${
-                    project.status === "Finalizado"
-                      ? "bg-green-500 rounded-full"
-                      : "bg-blue-500 rounded-full "
-                  } absolute top-0 right-0 p-2 text-xs mt-2 mr-2 text-white font-bold`}
-                >
-                  {project.status}
-                </div>
+  className={`status-badge ${
+    project.status === "Finalizado" || project.status === "Finished"
+      ? "bg-green-500 rounded-full"
+      : "bg-blue-500 rounded-full"
+  } absolute top-0 right-0 p-2 text-xs mt-2 mr-2 text-white font-bold`}
+>
+  {project.status}
+</div>
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                   {project.title}
                 </h3>
@@ -104,6 +106,8 @@ function Projects() {
                       ? Img_proyecto3
                       : project.image === "Proyecto_Portafolio.png"
                       ? Img_proyecto4
+                      : project.image === "Proyecto_BankSaintPatrick.png"
+                      ? Img_proyecto5
                       : ""
                   }
                   alt={project.title}
@@ -128,6 +132,7 @@ function Projects() {
                       {technology === "css" && <BiLogoCss3 />}
                       {technology === "bootstrap" && <BiLogoBootstrap />}
                       {technology === "vite" && <SiVite />}
+                      {technology === "posgresql" && <BiLogoPostgresql />}
                       {/* Agrega más condiciones para otros iconos de tecnologías */}
                     </li>
                   ))}

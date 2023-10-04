@@ -6,7 +6,7 @@
         "description": "TuChaza is a web page specifically designed to facilitate the creation of small stores, known as 'chazas', at the National University of Colombia. The main objective of this platform is to connect the information of these stores within the university campus.",
         "githubLink": "https://github.com/BrayanGalindez/TuChazaDefinitive",
         "webLink": "https://www.example.com/project1",
-        "status": "Finished",
+        "status": "In progress",
         "technologies": [
           "react",
           "node.js",
@@ -14,23 +14,6 @@
           "mongodb",
           "html",
           "js"
-        ]
-      },
-      {
-        "title": "BogoTaste",
-        "image": "Proyecto_PapitasConSoftware.png",
-        "description": "BogoTaste is a web page designed to provide users in the city of Bogotá with a compilation of reviews of local restaurants. Its goal is to provide users with detailed and reliable information about the city's restaurants so they can make informed decisions when choosing where to eat.",
-        "githubLink": "https://github.com/BrayanGalindez/PapitasConSoftware",
-        "webLink": "https://www.example.com/project2",
-        "status": "In progress",
-        "technologies": [
-          "react",
-          "node.js",
-          "mongodb",
-          "html",
-          "css",
-          "js",
-          "fastapi"
         ]
       },
       {
@@ -64,6 +47,24 @@
           "node.js",
           "html",
           "js",
+          "tailwind"
+        ]
+      },
+      {
+        "title": "Bank Saint Patrick",
+        "image": "Proyecto_BankSaintPatrick.png",
+        "description": "Saint Patrick Bank is a website that aims to provide bank customers with a secure and convenient online platform to access a number of essential financial services. This platform will allow users to make transfers, check their transaction history and check their card balance quickly and efficiently.",
+        "githubLink": "https://github.com/BrayanGalindez/IDEAS",
+        "webLink": "https://bancosaintpatrick.netlify.app/",
+        "status": "In progress",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "posgresql",
+          "html",
+          "js",
+          "express",
           "tailwind"
         ]
       }
