@@ -4,7 +4,7 @@
         "title": "TuChaza",
         "image": "Proyecto_TuChaza.png",
         "description": "TuChaza is a web page specifically designed to facilitate the creation of small stores, known as 'chazas', at the National University of Colombia. The main objective of this platform is to connect the information of these stores within the university campus.",
-        "githubLink": "https://github.com/BrayanGalindez/TuChazaDefinitive",
+        "githubLink": "https://github.com/BrayanGalindez/TuChaza",
         "webLink": "https://www.example.com/project1",
         "status": "In progress",
         "technologies": [
@@ -39,7 +39,7 @@
         "image": "Proyecto_Portafolio.png",
         "description": "My Portafolio is a website that shows my projects, knowledge and work approach. It incorporates features such as changing the theme (dark and light) and changing the language (Spanish and English) to personalize the user experience. The navigation bar allows quick access to different sections, such as projects, skills and education. In addition, it has a contact form to establish direct communication. My portfolio provides a pleasant and functional experience, making it easy to navigate, personalize and contact me. Browse my work and contact me for more information!",
         "githubLink": "https://github.com/BrayanGalindez/Portafolio-WebSite",
-        "webLink": "https://www.example.com/project2",
+        "webLink": "https://brayandev.netlify.app/",
         "status": "Finished",
         "technologies": [
           "vite",
@@ -53,10 +53,10 @@
       {
         "title": "Bank Saint Patrick",
         "image": "Proyecto_BankSaintPatrick.png",
-        "description": "Saint Patrick Bank is a website that aims to provide bank customers with a secure and convenient online platform to access a number of essential financial services. This platform will allow users to make transfers, check their transaction history and check their card balance quickly and efficiently.",
+        "description": "Saint Patrick Bank is a website that aims to provide bank customers with a secure and convenient online platform to access a number of essential financial services. This platform will allow users to make transfers, check their transaction history and check their card balance quickly and efficiently. Usuario: 1231456478974564 Pin: 1234",
         "githubLink": "https://github.com/BrayanGalindez/IDEAS",
         "webLink": "https://bancosaintpatrick.netlify.app/",
-        "status": "In progress",
+        "status": "Finished",
         "technologies": [
           "vite",
           "react",

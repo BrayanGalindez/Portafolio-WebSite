@@ -4,7 +4,7 @@
         "title": "TuChaza",
         "image": "Proyecto_TuChaza.png",
         "description": "TuChaza es una página web diseñada específicamente para facilitar la creación de pequeñas tiendas, conocidas como 'chazas', en la Universidad Nacional de Colombia. Esta plataforma tiene como objetivo principal conectar la información de estas tiendas dentro del campus universitario.",
-        "githubLink": "https://github.com/BrayanGalindez/TuChazaDefinitive",
+        "githubLink": "https://github.com/BrayanGalindez/TuChaza",
         "webLink": "https://www.example.com/project1",
         "status": "En proceso",
         "technologies": [
@@ -39,7 +39,7 @@
         "image": "Proyecto_Portafolio.png",
         "description": "Mi Portafolio es un sitio web que muestra mis proyectos, conocimientos y enfoque de trabajo. Incorpora funcionalidades como cambio de tema (oscuro y claro) y cambio de idioma (español e inglés) para personalizar la experiencia del usuario. La barra de navegación permite acceder rápidamente a diferentes secciones, como proyectos, habilidades y educación. Además, cuenta con un formulario de contacto para establecer comunicación directa. Mi portafolio brinda una experiencia agradable y funcional, facilitando la navegación, la personalización y el contacto conmigo. ¡Explora mi trabajo y contáctame para obtener más información!",
         "githubLink": "https://github.com/BrayanGalindez/Portafolio-WebSite",
-        "webLink": "https://www.example.com/project2",
+        "webLink": "https://brayandev.netlify.app/",
         "status": "Finalizado",
         "technologies": [
           "vite",
@@ -53,10 +53,10 @@
       {
         "title": "Banco Saint Patrick",
         "image": "Proyecto_BankSaintPatrick.png",
-        "description": "Banco Saint Patrick es un sitio web que tiene como objetivo proporcionar a los clientes del banco una plataforma en línea segura y conveniente para acceder a una serie de servicios financieros esenciales. Esta plataforma permitirá a los usuarios realizar transferencias, consultar su historial de transacciones y verificar el saldo de sus tarjetas de manera rápida y eficiente.",
+        "description": "Banco Saint Patrick es un sitio web que tiene como objetivo proporcionar a los clientes del banco una plataforma en línea segura y conveniente para acceder a una serie de servicios financieros esenciales. Esta plataforma permitirá a los usuarios realizar transferencias, consultar su historial de transacciones y verificar el saldo de sus tarjetas de manera rápida y eficiente. Usuario: 1231456478974564 Pin: 1234",
         "githubLink": "https://github.com/BrayanGalindez/IDEAS",
         "webLink": "https://bancosaintpatrick.netlify.app/",
-        "status": "En proceso",
+        "status": "Finalizado",
         "technologies": [
           "vite",
           "react",

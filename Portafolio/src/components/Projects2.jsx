@@ -84,14 +84,15 @@ function Projects() {
                 className=" bg-gray-200 dark:bg-indigo-950 rounded-lg shadow-lg p-4 transition-transform duration-300 transform hover:scale-105 relative "
               >
                 <div
-  className={`status-badge ${
-    project.status === "Finalizado" || project.status === "Finished"
-      ? "bg-green-500 rounded-full"
-      : "bg-blue-500 rounded-full"
-  } absolute top-0 right-0 p-2 text-xs mt-2 mr-2 text-white font-bold`}
->
-  {project.status}
-</div>
+                  className={`status-badge ${
+                    project.status === "Finalizado" ||
+                    project.status === "Finished"
+                      ? "bg-green-500 rounded-full"
+                      : "bg-blue-500 rounded-full"
+                  } absolute top-0 right-0 p-2 text-xs mt-2 mr-2 text-white font-bold`}
+                >
+                  {project.status}
+                </div>
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                   {project.title}
                 </h3>
@@ -146,14 +147,17 @@ function Projects() {
                   >
                     <AiFillGithub className="w-6 h-6" />
                   </a>
-                  <a
-                    href={project.webLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-                  >
-                    <BsLink45Deg className="w-6 h-6" />
-                  </a>
+                  {project.status === "Finalizado" ||
+                  project.status === "Finished" ? (
+                    <a
+                      href={project.webLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                    >
+                      <BsLink45Deg className="w-6 h-6" />
+                    </a>
+                  ) : null}
                 </div>
               </div>
             </div>
