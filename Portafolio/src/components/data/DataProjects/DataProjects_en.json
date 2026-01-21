@@ -1,6 +1,59 @@
 {
     "en": [
       {
+        "title": "Subacubun",
+        "image": "Proyecto_Subacubun.png",
+        "description": "Subacubun is a website created to revitalize the Muisca language through educational content, games, and videos, offering an interactive platform for learning and cultural preservation.",
+        "githubLink": "",
+        "webLink": "https://subacubun.com/",
+        "status": "Finished",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "html",
+          "js",
+          "tailwind"
+        ]
+      },
+      {
+        "title": "Mentora",
+        "image": "Proyecto_Mentora.png",
+        "description": "Mentora is a learning and mentoring web platform built in four weeks for the Alura Latam Alumnithon, where our team won the competition. It was built with Java Spring, React, and MySQL, highlighting collaboration, rapid learning, and a high-quality final product.",
+        "githubLink": "",
+        "webLink": "https://pruebamentora.netlify.app/",
+        "status": "Finished",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "java",
+          "spring",
+          "mysql",
+          "html",
+          "js",
+          "tailwind"
+        ]
+      },
+      {
+        "title": "Bank Saint Patrick",
+        "image": "Proyecto_BankSaintPatrick.png",
+        "description": "Saint Patrick Bank is a website that aims to provide bank customers with a secure and convenient online platform to access a number of essential financial services. This platform will allow users to make transfers, check their transaction history and check their card balance quickly and efficiently. Usuario: 1231456478974564 Pin: 1234",
+        "githubLink": "https://github.com/BrayanGalindez/IDEAS",
+        "webLink": "https://bancosaintpatrick.netlify.app/",
+        "status": "Finished",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "posgresql",
+          "html",
+          "js",
+          "express",
+          "tailwind"
+        ]
+      },
+      {
         "title": "TuChaza",
         "image": "Proyecto_TuChaza.png",
         "description": "TuChaza is a web page specifically designed to facilitate the creation of small stores, known as 'chazas', at the National University of Colombia. The main objective of this platform is to connect the information of these stores within the university campus.",
@@ -47,24 +100,6 @@
           "node.js",
           "html",
           "js",
-          "tailwind"
-        ]
-      },
-      {
-        "title": "Bank Saint Patrick",
-        "image": "Proyecto_BankSaintPatrick.png",
-        "description": "Saint Patrick Bank is a website that aims to provide bank customers with a secure and convenient online platform to access a number of essential financial services. This platform will allow users to make transfers, check their transaction history and check their card balance quickly and efficiently. Usuario: 1231456478974564 Pin: 1234",
-        "githubLink": "https://github.com/BrayanGalindez/IDEAS",
-        "webLink": "https://bancosaintpatrick.netlify.app/",
-        "status": "Finished",
-        "technologies": [
-          "vite",
-          "react",
-          "node.js",
-          "posgresql",
-          "html",
-          "js",
-          "express",
           "tailwind"
         ]
       }

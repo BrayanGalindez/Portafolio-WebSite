@@ -1,20 +1,32 @@
 {
     "es": [
       {
+        "title": "Alura Latam - Desarrollador Frontend",
+        "description": "Periodo: ene. 2024 - jul. 2024. Programa Oracle Next Education F2 T6 Front-end (Oracle + Alura LATAM). Incluyo HTML, CSS, JavaScript, consumo de APIs, stacks completos, OCI, redes y habilidades blandas. ID credencial: bf5646c8-5692-4ebf-9bea-3c632c1a22db. Aptitudes: OCI, Redes, Python, Desarrollo de aplicaciones web, Scrum, React.js.",
+        "certificateLink": "https://app.aluracursos.com/program/certificate/bf5646c8-5692-4ebf-9bea-3c632c1a22db?lang",
+        "imageFont": "AluraLatam.jpg"
+      },
+      {
+        "title": "Generative AI Foundations AWS",
+        "description": "Periodo: jun. 2025. IMMUNE Technology Institute. Formacion en fundamentos de IA generativa con AWS. ID credencial: 153367899. Aptitudes: IA generativa, AWS.",
+        "certificateLink": "https://www.credential.net/1c0fb785-3853-4b77-b341-cea7dbe13c31",
+        "imageFont": "GenerativeAWS.jpg"
+      },
+      {
         "title": "MisionTic",
-        "description": "MisionTIC es un programa de formación ofrecido por el Ministerio de Tecnologías de la Información y las Comunicaciones (MinTIC) que se enfoca en brindar capacitación en áreas fundamentales de la programación. Durante este programa, los participantes adquieren conocimientos y habilidades en temas como Fundamentos de Programación, Programación Básica, Desarrollo de Software y Desarrollo de Aplicaciones Web.\n\nEl programa MisionTIC tiene una duración total de 800 horas, durante las cuales los participantes tienen la oportunidad de sumergirse en el mundo de la programación y desarrollar proyectos prácticos que les permiten aplicar los conceptos aprendidos.",
+        "description": "Periodo: programa intensivo. Formacion del MinTIC enfocada en fundamentos de programacion. Incluyo Fundamentos de Programacion, Programacion Basica, Desarrollo de Software y Desarrollo de Aplicaciones Web, con proyectos practicos.",
         "certificateLink": "Mintic.pdf",
         "imageFont": "misiontic.png"
       },
       {
         "title": "Fundamentos en Analítica de Datos",
-        "description": "Durante el curso de Fundamentos en Analítica de Datos de Correlation One, se adquirieron conocimientos en alfabetización de datos, Excel, Python, estadística y limpieza de datos. Además, se exploraron temas avanzados como visualización de datos, tablas dinámicas en Excel, lógica condicional y diseño de tableros de control. El curso también cubrió análisis logístico, bases de datos, SQL y organización de equipos profesionales de datos en empresas. En resumen, el curso proporcionó una sólida base en analítica de datos, abarcando desde conceptos básicos hasta herramientas y técnicas avanzadas.",
+        "description": "Periodo: dic. 2022. Training and Competitions by Correlation One. Curso enfocado en fundamentos de analitica de datos. Incluyo alfabetizacion de datos, Excel, Python, estadistica, limpieza de datos, visualizacion, dashboards, regresion logistica, bases de datos y SQL.",
         "certificateLink": "DS4A.pdf",
         "imageFont": "DS4A.png"
       },
       {
         "title": "Curso en Codificación y Programación en Python",
-        "description": "En el curso de programación en Python de Innovation Campus, se enfocó en los fundamentos de Python con énfasis en análisis de datos.",
+        "description": "Periodo: jun. 2023. Universidad del Rosario. Certificado en codificacion y programacion en Python con enfasis en analisis de datos y ejercicios practicos. Aptitudes: Python.",
         "certificateLink": "InnovationCampus.pdf",
         "imageFont": "InnovationCampus.png"
       }

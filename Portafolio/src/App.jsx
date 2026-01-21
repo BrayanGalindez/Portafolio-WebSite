@@ -1,20 +1,17 @@
-import { useRef } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-// import Navbar from "../src/components/Navbar.jsx";
-import Footer from "../src/components/Footer.jsx";
-import Home from "../src/pages/Home.jsx";
+import { useRef } from 'react'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import Home from './pages/Home'
 
 function App() {
-  // Definir las referencias de los componentes
-  const aboutRef = useRef(null);
-  const skillsRef = useRef(null);
-  const projectsRef = useRef(null);
-  const educationRef = useRef(null);
-  const contactRef = useRef(null);
+  const aboutRef = useRef(null)
+  const skillsRef = useRef(null)
+  const projectsRef = useRef(null)
+  const educationRef = useRef(null)
+  const contactRef = useRef(null)
 
   return (
     <BrowserRouter>
-      <div id="root" className="flex flex-col min-h-screen overflow-hidden sm:overflow-auto">
+      <div className="flex flex-col min-h-screen overflow-hidden sm:overflow-auto">
         <Routes>
           <Route
             path="/"
@@ -29,10 +26,9 @@ function App() {
             }
           />
         </Routes>
-        {/* <Footer /> */}
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

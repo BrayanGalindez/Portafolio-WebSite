@@ -1,6 +1,59 @@
 {
     "es": [
       {
+        "title": "Subacubun",
+        "image": "Proyecto_Subacubun.png",
+        "description": "Subacubun es un sitio web creado para revitalizar la lengua muisca a través de contenido didáctico, juegos y videos, ofreciendo una plataforma interactiva para el aprendizaje y preservación cultural.",
+        "githubLink": "",
+        "webLink": "https://subacubun.com/",
+        "status": "Finalizado",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "html",
+          "js",
+          "tailwind"
+        ]
+      },
+      {
+        "title": "Mentora",
+        "image": "Proyecto_Mentora.png",
+        "description": "Mentora es una plataforma web de aprendizaje y mentorias creada en cuatro semanas para el Alumnithon de Alura Latam, proyecto ganador junto a un equipo multidisciplinario. Esta construida con Java Spring, React y MySQL, y destaca por su enfoque en el aprendizaje colaborativo, el trabajo bajo presion y la calidad del producto final.",
+        "githubLink": "",
+        "webLink": "https://pruebamentora.netlify.app/",
+        "status": "Finalizado",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "java",
+          "spring",
+          "mysql",
+          "html",
+          "js",
+          "tailwind"
+        ]
+      },
+      {
+        "title": "Banco Saint Patrick",
+        "image": "Proyecto_BankSaintPatrick.png",
+        "description": "Banco Saint Patrick es un sitio web que tiene como objetivo proporcionar a los clientes del banco una plataforma en línea segura y conveniente para acceder a una serie de servicios financieros esenciales. Esta plataforma permitirá a los usuarios realizar transferencias, consultar su historial de transacciones y verificar el saldo de sus tarjetas de manera rápida y eficiente. Usuario: 1231456478974564 Pin: 1234",
+        "githubLink": "https://github.com/BrayanGalindez/IDEAS",
+        "webLink": "https://bancosaintpatrick.netlify.app/",
+        "status": "Finalizado",
+        "technologies": [
+          "vite",
+          "react",
+          "node.js",
+          "posgresql",
+          "html",
+          "js",
+          "express",
+          "tailwind"
+        ]
+      },
+      {
         "title": "TuChaza",
         "image": "Proyecto_TuChaza.png",
         "description": "TuChaza es una página web diseñada específicamente para facilitar la creación de pequeñas tiendas, conocidas como 'chazas', en la Universidad Nacional de Colombia. Esta plataforma tiene como objetivo principal conectar la información de estas tiendas dentro del campus universitario.",
@@ -47,24 +100,6 @@
           "node.js",
           "html",
           "js",
-          "tailwind"
-        ]
-      },
-      {
-        "title": "Banco Saint Patrick",
-        "image": "Proyecto_BankSaintPatrick.png",
-        "description": "Banco Saint Patrick es un sitio web que tiene como objetivo proporcionar a los clientes del banco una plataforma en línea segura y conveniente para acceder a una serie de servicios financieros esenciales. Esta plataforma permitirá a los usuarios realizar transferencias, consultar su historial de transacciones y verificar el saldo de sus tarjetas de manera rápida y eficiente. Usuario: 1231456478974564 Pin: 1234",
-        "githubLink": "https://github.com/BrayanGalindez/IDEAS",
-        "webLink": "https://bancosaintpatrick.netlify.app/",
-        "status": "Finalizado",
-        "technologies": [
-          "vite",
-          "react",
-          "node.js",
-          "posgresql",
-          "html",
-          "js",
-          "express",
           "tailwind"
         ]
       }

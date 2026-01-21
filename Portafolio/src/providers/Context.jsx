@@ -1,111 +1,80 @@
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from 'react'
+import { THEMES, LANGUAGES } from '../utils/constants'
 
-const usePrevious = (value) => {
-  const ref = useRef();
+const STORAGE_KEYS = {
+  THEME: 'theme',
+  LANGUAGE: 'language'
+}
 
-  useEffect(() => {
-    ref.current = value;
-  }, [value]);
-
-  return ref.current;
-};
-
-const getInitialTheme = (themeKey) => {
-  const storedTheme = window.localStorage.getItem(themeKey);
-  if (storedTheme) {
-    return storedTheme;
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') return THEMES.LIGHT
+  
+  const storedTheme = localStorage.getItem(STORAGE_KEYS.THEME)
+  if (storedTheme && (storedTheme === THEMES.LIGHT || storedTheme === THEMES.DARK)) {
+    return storedTheme
   }
-  return window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-
-const getInitialLanguage = (languageKey) => {
-  const storedLanguage = window.localStorage.getItem(languageKey);
-  if (storedLanguage) {
-    return storedLanguage;
+  
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return THEMES.DARK
   }
-  const browserLanguage = navigator.language || "en";
-  return browserLanguage.split("-")[0]; // Tomar solo el código del idioma sin la región
-};
+  
+  return THEMES.LIGHT
+}
 
-const useStorageTheme = (themeKey) => {
-  const [theme, setTheme] = useState(getInitialTheme(themeKey));
+const getInitialLanguage = () => {
+  if (typeof window === 'undefined') return LANGUAGES.EN
+  
+  const storedLanguage = localStorage.getItem(STORAGE_KEYS.LANGUAGE)
+  if (storedLanguage && (storedLanguage === LANGUAGES.ES || storedLanguage === LANGUAGES.EN)) {
+    return storedLanguage
+  }
+  
+  const browserLanguage = navigator.language || LANGUAGES.EN
+  return browserLanguage.split('-')[0] === LANGUAGES.ES ? LANGUAGES.ES : LANGUAGES.EN
+}
 
-  useEffect(() => {
-    window.localStorage.setItem(themeKey, theme);
-  }, [theme, themeKey]);
-
-  return [theme, setTheme];
-};
-
-const useStorageLanguage = (languageKey) => {
-  const [language, setLanguage] = useState(getInitialLanguage(languageKey));
-
-  useEffect(() => {
-    window.localStorage.setItem(languageKey, language);
-  }, [language, languageKey]);
-
-  return [language, setLanguage];
-};
-
-export const ThemeContext = createContext({
-  theme: "light",
-  toggleTheme: () => {
-    console.log("toggle Theme");
-  },
-});
-
-export const LanguageContext = createContext({
-  language: "en",
-  isEnglishMode: true,
-  toggleLanguageMode: () => {},
-  changeLanguage: () => {},
-});
+export const ThemeContext = createContext(null)
+export const LanguageContext = createContext(null)
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useStorageTheme("theme");
-  const [isDarkMode, setIsDarkMode] = useState(theme === "dark");
-  const oldTheme = usePrevious(theme);
+  const [theme, setTheme] = useState(getInitialTheme)
+  const isDarkMode = theme === THEMES.DARK
 
   useEffect(() => {
-    document.documentElement.classList.remove(oldTheme);
-    document.documentElement.classList.add(theme);
-    setIsDarkMode(theme === "dark");
-  }, [theme, oldTheme]);
+    localStorage.setItem(STORAGE_KEYS.THEME, theme)
+    document.documentElement.classList.remove(THEMES.LIGHT, THEMES.DARK)
+    document.documentElement.classList.add(theme)
+  }, [theme])
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
+  const toggleTheme = useCallback(() => {
+    setTheme((prev) => (prev === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT))
+  }, [])
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isDarkMode }}>
       {children}
     </ThemeContext.Provider>
-  );
-};
+  )
+}
 
 const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useStorageLanguage("language");
-  const [isEnglishMode, setIsEnglishMode] = useState(language === "en");
-  const oldLanguage = usePrevious(language);
+  const [language, setLanguage] = useState(getInitialLanguage)
+  const isEnglishMode = language === LANGUAGES.EN
 
   useEffect(() => {
-    document.documentElement.classList.remove(oldLanguage);
-    document.documentElement.classList.add(language); // Cambia oldLanguage a language
-    setIsEnglishMode(language === "en"); // Cambia "EN" a "en"
-  }, [language, oldLanguage]);
+    localStorage.setItem(STORAGE_KEYS.LANGUAGE, language)
+    document.documentElement.lang = language
+  }, [language])
 
-  const toggleLanguageMode = () => {
-    const newLanguage = isEnglishMode ? "es" : "en";
-    setIsEnglishMode((prevMode) => !prevMode);
-    setLanguage(newLanguage); // Actualizar el estado del idioma
-  };
+  const toggleLanguageMode = useCallback(() => {
+    setLanguage((prev) => (prev === LANGUAGES.EN ? LANGUAGES.ES : LANGUAGES.EN))
+  }, [])
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-  };
+  const changeLanguage = useCallback((lang) => {
+    if (lang === LANGUAGES.ES || lang === LANGUAGES.EN) {
+      setLanguage(lang)
+    }
+  }, [])
 
   return (
     <LanguageContext.Provider
@@ -113,7 +82,7 @@ const LanguageProvider = ({ children }) => {
     >
       {children}
     </LanguageContext.Provider>
-  );
-};
+  )
+}
 
-export { ThemeProvider, LanguageProvider };
+export { ThemeProvider, LanguageProvider }

@@ -1,273 +1,126 @@
-import react from "../assets/Skills/react.png";
-import node from "../assets/Skills/node.png";
-import bootstrap from "../assets/Skills/bootstrap.png";
-import fastapi from "../assets/Skills/fastapi.png";
-import git from "../assets/Skills/git.png";
-import vite from "../assets/Skills/vite.png";
-import postman from "../assets/Skills/postman.png";
-import mongodb from "../assets/Skills/mongodb.png";
-import css from "../assets/Skills/css.png";
-import html from "../assets/Skills/html.png";
-import js from "../assets/Skills/js.png";
-import tailwind from "../assets/Skills/tailwind.png";
-import python from "../assets/Skills/python.png";
-import java from "../assets/Skills/java.png";
+import { useState } from 'react'
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiAngular,
+  SiExpress,
+  SiSpringboot,
+  SiDocker,
+  SiVercel,
+  SiNetlify,
+  SiGithub,
+  SiGithubactions,
+  SiReact,
+  SiNodedotjs,
+  SiBootstrap,
+  SiFastapi,
+  SiGit,
+  SiVite,
+  SiPostman,
+  SiMongodb,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTailwindcss,
+  SiPython
+} from 'react-icons/si'
+import { FaFileExcel, FaChartBar, FaCogs, FaThLarge, FaJava } from 'react-icons/fa'
+import { useLanguage } from '../hooks/useLanguage'
+import Section from './ui/Section'
+import dataSkills_es from './data/DataSkills/DataSkills_es.json'
+import dataSkills_en from './data/DataSkills/DataSkills_en.json'
 
-import { useState, useContext} from "react";
-import { LanguageContext } from "../providers/Context.jsx";
-import dataSkills_es from "./data/DataSkills/DataSkills_es.json";
-import dataSkills_en from "./data/DataSkills/DataSkills_en.json";
+const skillsData = [
+  { name: 'React', icon: SiReact },
+  { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'Angular', icon: SiAngular },
+  { name: 'Node.js', icon: SiNodedotjs },
+  { name: 'Express', icon: SiExpress },
+  { name: 'FastAPI', icon: SiFastapi },
+  { name: 'Spring Boot', icon: SiSpringboot },
+  { name: 'MongoDB', icon: SiMongodb },
+  { name: 'HTML', icon: SiHtml5 },
+  { name: 'CSS', icon: SiCss3 },
+  { name: 'JavaScript (ES6+)', icon: SiJavascript },
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: 'Tailwind', icon: SiTailwindcss },
+  { name: 'Bootstrap', icon: SiBootstrap },
+  { name: 'Python', icon: SiPython },
+  { name: 'Java', icon: FaJava },
+  { name: 'Git', icon: SiGit },
+  { name: 'GitHub', icon: SiGithub },
+  { name: 'Docker', icon: SiDocker },
+  { name: 'Vercel', icon: SiVercel },
+  { name: 'Netlify', icon: SiNetlify },
+  { name: 'CI/CD', icon: SiGithubactions },
+  { name: 'Postman', icon: SiPostman },
+  { name: 'Vite', icon: SiVite },
+  { name: 'Power BI', icon: FaChartBar },
+  { name: 'Power Automate', icon: FaCogs },
+  { name: 'Power Apps', icon: FaThLarge },
+  { name: 'Excel (Avanzado)', icon: FaFileExcel }
+]
 
-
-
-function Skills() {
-  const [hoveredTechnology, setHoveredTechnology] = useState("");
-  const { language } = useContext(LanguageContext);
-  const dataSkills = language === "es" ? dataSkills_es.es : dataSkills_en.en;
-  const { title } = dataSkills;
-
-  const handleMouseEnter = (technologyName) => {
-    setHoveredTechnology(technologyName);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredTechnology("");
-  };
+const Skills = () => {
+  const [hoveredTechnology, setHoveredTechnology] = useState('')
+  const { language } = useLanguage()
+  const dataSkills = language === 'es' ? dataSkills_es.es : dataSkills_en.en
+  const { title } = dataSkills
 
   return (
-    <section id="skills" className="bg-white py-8 dark:bg-gray-900 ">
-      <h2 className="max-w-5xl mx-auto px-4 text-3xl font-bold text-gray-800 dark:text-white mb-4">
-        {title}
-      </h2>
-      <div className="max-w-5xl mx-auto flex flex-wrap justify-center">
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("React")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={react}
-            alt="Tecnología 1"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "React" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              React
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Node.js")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={node}
-            alt="Tecnología 2"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Node.js" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Node.js
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Bootstrap")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={bootstrap}
-            alt="Tecnología 3"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Bootstrap" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Bootstrap
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("FastAPI")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={fastapi}
-            alt="Tecnología 4"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "FastAPI" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              FastAPI
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Git")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={git}
-            alt="Tecnología 5"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Git" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Git
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Vite")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={vite}
-            alt="Tecnología 6"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Vite" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Vite
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Postman")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={postman}
-            alt="Tecnología 7"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Postman" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Postman
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("MongoDB")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={mongodb}
-            alt="Tecnología 8"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "MongoDB" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              MongoDB
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("HTML")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={html}
-            alt="Tecnología 9"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "HTML" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              HTML
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("CSS")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={css}
-            alt="Tecnología 10"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "CSS" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              CSS
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Javascript")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={js}
-            alt="Tecnología 11"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Javascript" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Javascript
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Tailwind")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={tailwind}
-            alt="Tecnología 12"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Tailwind" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Tailwind
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Python")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={python}
-            alt="Tecnología 13"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Python" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Python
-            </p>
-          )}
-        </div>
-        <div
-          className="bg-gray-200 rounded-lg shadow-lg flex items-center justify-center p-2 m-2 flex-basis-1/5 relative"
-          onMouseEnter={() => handleMouseEnter("Java")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <img
-            src={java}
-            alt="Tecnología 14"
-            className="w-16  transition-transform duration-300 transform hover:scale-110"
-          />
-          {hoveredTechnology === "Java" && (
-            <p className="rounded absolute inset-0 flex items-center justify-center text-center text-sm font-medium bg-gray-800 dark:bg-indigo-950 text-white py-2">
-              Java
-            </p>
-          )}
-        </div>
-        {/* Agrega más tarjetas de tecnologías aquí */}
+    <Section id="skills" title={title}>
+      <div className="flex flex-col items-center gap-4" role="list" aria-label="Technologies">
+        {(() => {
+          const rowPattern = [5, 4, 3, 4, 5]
+          const rows = []
+          let index = 0
+
+          for (const count of rowPattern) {
+            if (index >= skillsData.length) break
+            const row = skillsData.slice(index, index + count)
+            rows.push(row)
+            index += count
+          }
+
+          if (index < skillsData.length) {
+            rows.push(skillsData.slice(index))
+          }
+
+          return rows.map((row, rowIndex) => (
+            <div
+              key={`row-${rowIndex}`}
+              className="flex flex-wrap justify-center gap-2.5"
+            >
+              {row.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="bg-white/70 dark:bg-slate-900/70 backdrop-blur rounded-2xl border border-cyan-500/10 shadow-lg flex items-center justify-center p-2 relative group w-14 h-14 md:w-16 md:h-16"
+                  onMouseEnter={() => setHoveredTechnology(skill.name)}
+                  onMouseLeave={() => setHoveredTechnology('')}
+                  role="listitem"
+                  aria-label={skill.name}
+                >
+                  <skill.icon
+                    className="text-xl text-cyan-600 dark:text-cyan-400 transition-transform duration-300 transform group-hover:scale-110"
+                    aria-hidden="true"
+                  />
+                  {hoveredTechnology === skill.name && (
+                    <p 
+                      className="rounded absolute inset-0 flex items-center justify-center text-center text-xs font-medium bg-slate-900/90 dark:bg-slate-950/90 text-white py-2 transition-opacity duration-300"
+                      role="tooltip"
+                      aria-live="polite"
+                    >
+                      {skill.name}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))
+        })()}
       </div>
-    </section>
-  );
+    </Section>
+  )
 }
 
-export default Skills;
+export default Skills
